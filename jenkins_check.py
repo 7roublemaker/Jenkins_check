@@ -1,4 +1,4 @@
-import os 
+import sys
 import uuid
 import codecs
 import requests
@@ -50,7 +50,7 @@ def CVE_2017_1000353(domain):
     
 
 if __name__ == "__main__":
-    targets = open("targets.txt","r").read().split('\n')
+    targets = open(sys.argv[1],"r").read().split('\n')
     result = []
     for domain in targets:
         a = CVE_2017_1000353(domain)
